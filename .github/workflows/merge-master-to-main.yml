@@ -1,0 +1,23 @@
+name: Merge Master to Main
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  merge-master-to-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Merge Master to Main
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "noreply@github.com"
+          git checkout main
+          git merge --no-ff master -m "Merge master into main"
+          git push origin main
