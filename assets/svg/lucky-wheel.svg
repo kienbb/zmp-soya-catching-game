@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="150" cy="150" r="145" fill="#FECACA" stroke="#7F1D1D" stroke-width="5"/>
+  
+  <!-- Wheel segments -->
+  <path d="M150,150 L150,5 A145,145 0 0,1 261.5,61.5 Z" fill="#FEF3C7"/>
+  <path d="M150,150 L261.5,61.5 A145,145 0 0,1 261.5,238.5 Z" fill="#BFDBFE"/>
+  <path d="M150,150 L261.5,238.5 A145,145 0 0,1 150,295 Z" fill="#BBF7D0"/>
+  <path d="M150,150 L150,295 A145,145 0 0,1 38.5,238.5 Z" fill="#FBCFE8"/>
+  <path d="M150,150 L38.5,238.5 A145,145 0 0,1 38.5,61.5 Z" fill="#A7F3D0"/>
+  <path d="M150,150 L38.5,61.5 A145,145 0 0,1 150,5 Z" fill="#DDD6FE"/>
+  
+  <!-- Dividing lines -->
+  <line x1="150" y1="150" x2="150" y2="5" stroke="#7F1D1D" stroke-width="2"/>
+  <line x1="150" y1="150" x2="261.5" y2="61.5" stroke="#7F1D1D" stroke-width="2"/>
+  <line x1="150" y1="150" x2="261.5" y2="238.5" stroke="#7F1D1D" stroke-width="2"/>
+  <line x1="150" y1="150" x2="150" y2="295" stroke="#7F1D1D" stroke-width="2"/>
+  <line x1="150" y1="150" x2="38.5" y2="238.5" stroke="#7F1D1D" stroke-width="2"/>
+  <line x1="150" y1="150" x2="38.5" y2="61.5" stroke="#7F1D1D" stroke-width="2"/>
+  
+  <!-- Center and spinner -->
+  <circle cx="150" cy="150" r="20" fill="#FEF3C7" stroke="#7F1D1D" stroke-width="3"/>
+  <path d="M150,150 L170,110 L185,120 Z" fill="#EF4444" stroke="#7F1D1D" stroke-width="2"/>
+</svg> 
