@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Front End Guidelines Document - Catching Game
+1. Technology Stack:
+HTML5
+CSS3 (potentially with preprocessor like SASS/SCSS for organization)
+JavaScript (ES6+)
+Optional Game Library: Phaser.io, PixiJS, or similar for handling canvas rendering, physics, sprites, and game loop management. Vanilla JS is possible but more complex for game interactions.
+Optional UI Framework: React, Vue, or Svelte for managing UI state outside the game canvas (e.g., menus, forms, leaderboards), or use Vanilla JS DOM manipulation.
+2. Architecture:
+Separate game logic from UI logic.
+If using a game library, follow its scene/state management patterns.
+If using a UI framework, use components for reusable elements (Buttons, Modals, List Items).
+Event-driven communication between UI and game logic.
+3. UI Implementation:
+Implement screens as defined in GDD (Info Form, Home, Game, Game Over, Leaderboard, Rewards).
+Ensure responsiveness using CSS media queries, flexible layouts (Flexbox/Grid). Test on common mobile resolutions and web.
+Use provided graphical assets for buttons, backgrounds, icons.
+Handle user input (touch events for mobile swipes, keyboard events for desktop).
+4. Asset Management:
+Optimize images (WebP format where supported, PNG fallback) and use sprite sheets to reduce HTTP requests.
+Load assets asynchronously with loading indicators.
+Compress audio files (MP3, OGG).
+5. State Management:
+Track game state: currentScore, livesRemaining, timeLeft, isGameOver, accumulatedBeans, availablePlays.
+Use Local Storage for persisting basic state like user info (if consented), highest score, accumulated beans (for demo purposes without backend).
+For features requiring server validation (shared leaderboard, share rewards, daily login across devices), state needs to be synced with the backend via API calls.
+6. API Interaction (if Backend exists):
+Define functions to call backend endpoints:
+submitUserInfo(name, phone, age)
+submitScore(score, beansCollected)
+getLeaderboard()
+notifyShareSuccess() -> returns updated play count
+claimDailyLogin() -> returns updated play count
+getAccumulatedRewards()
+redeemReward(rewardId)
+Handle API responses (success, error), update UI accordingly. Implement loading states during API calls.
+7. Performance:
+Minimize DOM manipulation if not using a canvas library heavily.
+Optimize game loop (use requestAnimationFrame).
+Throttle event listeners where necessary.
+Code splitting/minification for production builds.
+8. Styling:
+Follow VinaSoy brand guidelines (colors, fonts).
+Use CSS variables for theme consistency.
+Ensure accessibility basics (contrast ratios, button focus states).

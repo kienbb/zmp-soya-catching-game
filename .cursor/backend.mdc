@@ -1,0 +1,50 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Backend Structure Document - Catching Game
+1. Purpose: To manage user data, game state persistence, leaderboard, reward validation, and anti-cheat mechanisms. Note: This assumes a backend is built. For a GitHub Pages demo, this might be replaced by Local Storage or mocked entirely.
+2. Technology Stack (Suggestion):
+Language/Framework: Node.js (with Express), Python (Flask/Django), PHP (Laravel)
+Database: PostgreSQL, MySQL, MongoDB (NoSQL might be simpler for flexible user/reward data)
+Hosting: Heroku, AWS, Google Cloud, Vercel (Needs separate hosting from GitHub Pages) OR Serverless Functions (Netlify, Vercel, AWS Lambda - potentially compatible edge solution)
+3. API Endpoints:
+POST /api/users: Create/update user info (name, phone, age). Returns user ID/status.
+GET /api/users/me: Get current logged-in user's data (plays, accumulated beans). Requires authentication (simple token).
+POST /api/plays/daily: Claim daily login bonus. Returns updated play count.
+POST /api/plays/share: Notify successful share. Server validates (e.g., limits per day). Returns updated play count.
+POST /api/scores: Submit score from a completed game. Server validates score (basic anti-cheat). Records score and updates accumulated beans.
+GET /api/leaderboard: Get top N scores. Optionally takes parameters (timeframe, type).
+GET /api/rewards: Get available redemption options.
+POST /api/rewards/redeem: Attempt to redeem a reward using accumulated beans. Server validates balance and processes redemption.
+4. Data Models (Example - MongoDB style):
+User:
+_id: ObjectId
+zaloId / deviceId: String (Unique identifier)
+name: String (Optional)
+phone: String (Optional, hashed/encrypted)
+age: Number (Optional)
+availablePlays: Number
+lastLoginDate: Date
+consecutiveLoginDays: Number
+sharesToday: Number
+lastShareDate: Date
+accumulatedBeans: { total: Number, typeA: Number, typeB: Number } // Or just total
+highScore: Number
+createdAt: Date
+updatedAt: Date
+Score:
+_id: ObjectId
+userId: ObjectId (ref: User)
+scoreValue: Number
+beansCollected: { ... } // Details if needed
+playedAt: Date
+5. Authentication/Authorization:
+Simple session/token-based approach suitable for mini-apps/web games. Could use Zalo ID or generate a unique device ID stored in Local Storage.
+6. Security:
+Input validation on all API endpoints.
+Rate limiting to prevent abuse.
+Basic score validation (e.g., check if score is realistically achievable within the time limit). Server should ideally calculate score based on actions if more security is needed, but that's complex.
+Protect user PII (hashing phone numbers if stored).
+7. Scalability: Consider database indexing for leaderboards. Use stateless API design if planning for load balancing.

@@ -1,0 +1,42 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Game Design Document (GDD) - Catching Game
+1. Overview: A fast-paced catching game where players collect falling VinaSoy beans while avoiding rotten ones, competing for high scores and accumulating rewards.
+2. Core Gameplay:
+Objective: Catch as many 'Good Soybeans' as possible within 60 seconds.
+Controls: Swipe left/right or use arrow keys (desktop) to move the collection basket horizontally.
+Game Elements:
+Basket: Player-controlled element. 5 Baskets represent lives.
+Good Soybeans: Fall randomly from the top. Award points (+1 or more). May have different visual types representing "3 Tốt" benefits (e.g., "Tình duyên tốt," "Sức khỏe tốt").
+Bad Soybeans: Fall randomly. Catching one results in losing a basket (-1 life). Visual distinction (e.g., moldy, dark color).
+Timer: Counts down from 60 seconds.
+Score Display: Shows current points.
+Lives Display: Shows remaining baskets (e.g., 5 icons).
+Game End Conditions:
+Timer reaches 0.
+Player loses all 5 baskets.
+Player manually quits (less common).
+Difficulty: Speed/frequency of falling beans might increase over time or based on score (optional).
+3. Screens & UI:
+Info Form: Simple fields for Name, Phone, Age. Submit button. Skip/Close button. VinaSoy branding.
+Homepage: Background matching theme. Buttons (Play, Share, Leaderboard, Rewards). Maybe display highest score or total beans collected.
+Gameplay Screen: Game area with falling beans, player basket. UI Overlays for Score, Timer, Lives. Pause button (optional).
+Game Over Screen: Display final score, types/number of beans collected. Buttons: Play Again, Back to Home, Share Score (optional).
+Leaderboard Screen: Numbered list of top players/scores (e.g., Top 10/Top 50). Player's rank highlighted. Requires backend for shared data.
+Rewards Screen: Display total accumulated beans (by type if applicable). Redemption options (e.g., "Redeem 100 beans for Voucher X", "Spin the Wheel"). Lucky Wheel interface if applicable.
+4. Art & Sound:
+Art Style: Cartoonish, friendly, bright colors matching VinaSoy branding and the provided slides. Clear distinction between good/bad beans.
+Assets: Backgrounds, Basket sprite, Good Bean sprites (multiple types?), Bad Bean sprite, UI elements (buttons, icons), VinaSoy logo.
+Sound: Background music (cheerful, upbeat), Sound effects (bean catch success, bad bean catch fail, button clicks, game over).
+5. Reward & Progression:
+Primary Reward: Points/Score per game.
+Secondary Reward: Accumulated "Good Soybeans" (total count, potentially categorized by type).
+Tertiary Reward: Leaderboard ranking.
+Redemption: Accumulated beans can be used for voucher codes, lucky spins, or other campaign-specific rewards.
+Extra Plays: Earned via Sharing (max 3/day) and Daily Login (progressive: Day 1 = 1 play, Day 3 = 2 plays, Day 7 = 3 plays, resets or caps TBD).
+6. Technical Details:
+Physics: Simple gravity for falling beans, collision detection (bean vs. basket).
+Randomization: Bean type and horizontal spawn position.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350" height="500" viewBox="0 0 350 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="346" height="496" rx="16" fill="#FBBF24" stroke="#92400E" stroke-width="4"/>
+  <rect x="10" y="10" width="330" height="70" rx="10" fill="#FDE68A" stroke="#92400E" stroke-width="2"/>
+  <text x="175" y="50" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="24" fill="#92400E">LEADERBOARD</text>
+  <rect x="10" y="90" width="330" height="60" rx="8" fill="#FDE68A" stroke="#92400E" stroke-width="2"/>
+  <rect x="10" y="160" width="330" height="60" rx="8" fill="#FDE68A" stroke="#92400E" stroke-width="2"/>
+  <rect x="10" y="230" width="330" height="60" rx="8" fill="#FDE68A" stroke="#92400E" stroke-width="2"/>
+  <rect x="10" y="300" width="330" height="60" rx="8" fill="#FDE68A" stroke="#92400E" stroke-width="2"/>
+  <rect x="10" y="370" width="330" height="60" rx="8" fill="#FDE68A" stroke="#92400E" stroke-width="2"/>
+  <rect x="10" y="440" width="330" height="50" rx="8" fill="#F59E0B" stroke="#92400E" stroke-width="2"/>
+</svg> 

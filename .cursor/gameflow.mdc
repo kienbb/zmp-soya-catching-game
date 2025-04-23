@@ -1,0 +1,46 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Game Flow - Catching Game
+graph TD
+    A[User Visits Link/Opens Mini App] --> B{Info Form Presented?};
+    B -- Yes --> C[User Fills/Skips Form];
+    B -- No / Already Filled --> D[Homepage];
+    C --> D;
+
+    D --> E[Clicks Play Game];
+    D --> F[Clicks Share];
+    D --> G[Clicks Leaderboard];
+    D --> H[Clicks Rewards/Accumulation];
+
+    E --> I{Has Plays Left?};
+    I -- Yes --> J[Gameplay Screen - Catching Game];
+    I -- No --> K[Popup: No Plays Left, Suggest Sharing/Waiting];
+    K --> D;
+
+    J --> L{Game Over? (Time Up / Lives Lost)};
+    L -- Yes --> M[Game Over Screen: Show Score, Beans Caught];
+    L -- No --> J; // Game loop continues
+    M --> D;
+
+    F --> N{Sharing Platform};
+    N --> O{Share Successful?};
+    O -- Yes --> P[Grant +1 Play (if limit not reached)];
+    O -- No --> Q[Share Failed/Cancelled Message];
+    P --> D;
+    Q --> D;
+
+    G --> R[Leaderboard Screen];
+    R --> D;
+
+    H --> S[Rewards/Accumulation Screen];
+    S --> T{Redeem/Spin?}; // Optional interaction
+    T -- Yes --> U[Redemption/Spin Logic];
+    T -- No --> D;
+    U --> S; // Back to rewards screen after action
+
+    X[User Logs In Daily] --> Y{Calculate Daily Play Reward};
+    Y --> Z[Grant Free Plays];
+    Z --> D;

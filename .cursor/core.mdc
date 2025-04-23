@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Understanding the Core Requirements:
+Platform: HTML5, deployable on standard web browsers and embeddable within Zalo Mini App (mobile application).
+Target: Demo deployment on GitHub Pages. This implies limitations on complex backend functionality unless using serverless functions or a separate hosting service for the API. For a pure GitHub Pages demo, backend logic might be mocked or rely heavily on Local Storage.
+Brand: VinaSoy - Promotional game "Soya Farming".
+Goal: Engage users, potentially collect basic user info (Name, Phone, Age - handle privacy carefully!), encourage sharing, and drive brand association ("3 Tốt" - 3 Goods).
+Common Features:
+User Information Form (Initial entry).
+Homepage/Menu (Play, Share, Leaderboard, Accumulated Rewards/Points).
+Core Gameplay Loop (Specific to each game).
+Reward System (Points/Beans collection, possibly a lucky spin, voucher redemption).
+Leaderboard.
+Sharing Mechanism (Gain extra plays).
+Daily Login Rewards (Progressive extra plays).
