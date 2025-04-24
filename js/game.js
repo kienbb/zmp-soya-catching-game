@@ -956,21 +956,21 @@ function showScoreChange(value, streakBonus, basketRect, messageKey, beanColor, 
       
       // Show golden indicator for golden bean streaks
       if (isGolden) {
-        streakElement.textContent = `✨ Streak x${currentStreak} ✨`;
+        streakElement.textContent = `x${currentStreak}`;
         streakElement.style.color = '#D97706';
         streakElement.style.textShadow = '0 0 5px #FDE68A';
         streakElement.style.backgroundColor = 'rgba(254, 243, 199, 0.9)';
         streakElement.style.border = '1px solid #F59E0B';
       } else {
-        streakElement.textContent = `Streak x${currentStreak}`;
+        streakElement.textContent = `x${currentStreak}`;
         streakElement.style.color = '#9333EA';
         streakElement.style.textShadow = '0 0 3px #E9D5FF';
         streakElement.style.backgroundColor = 'rgba(233, 213, 255, 0.7)';
       }
       
       streakElement.style.position = 'absolute';
-      streakElement.style.left = `${basketRect.left + basketRect.width / 2 - 30}px`;
-      streakElement.style.top = `${basketRect.top - 80}px`;
+      streakElement.style.left = `${basketRect.left + basketRect.width / 2 + 60}px`; // Move to the right of the message
+      streakElement.style.top = `${basketRect.top - 50}px`; // Align at same level as message
       streakElement.style.fontWeight = 'bold';
       streakElement.style.fontSize = '1.1rem';
       streakElement.style.zIndex = '20';
