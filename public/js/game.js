@@ -581,8 +581,16 @@ function spawnBean() {
     beanElement.dataset.messageKey = specificBeanType;
   }
   
-  // Set random starting position
-  const startX = getRandomInt(config.minSpawnX, config.maxSpawnX - 50);
+  // Get game area width and respect safe margins
+  const gameAreaWidth = elements.gameArea.offsetWidth;
+  const safeMargin = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bean-safe-margin') || '20');
+  const beanWidth = beanType === 'golden' ? 50 : 40;
+  
+  // Set random starting position with safe margins
+  const minX = safeMargin;
+  const maxX = gameAreaWidth - beanWidth - safeMargin;
+  const startX = getRandomInt(minX, maxX);
+  
   beanElement.style.left = `${startX}px`;
   beanElement.style.top = '-50px';
   
@@ -597,9 +605,14 @@ function spawnBean() {
 // Determine which type of bean to spawn
 function determineBeanType() {
   const random = Math.random();
-  if (random < config.negativeBeanChance) {
+  
+  // Only spawn negative beans after 10 seconds
+  const gameTimeElapsed = config.gameTime - gameState.timeLeft;
+  const allowNegativeBeans = gameTimeElapsed >= 10;
+  
+  if (allowNegativeBeans && random < config.negativeBeanChance) {
     return 'negative';
-  } else if (random < config.negativeBeanChance + config.goldenBeanChance) {
+  } else if (random < (allowNegativeBeans ? config.negativeBeanChance : 0) + config.goldenBeanChance) {
     return 'golden';
   } else {
     return 'regular';

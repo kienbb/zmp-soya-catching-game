@@ -19,6 +19,7 @@
     --button-hover-color: #F59E0B;
     --shadow-color: rgba(124, 45, 18, 0.2);
     --white: #FFFFFF;
+    --bean-safe-margin: 30px;
 }
 
 /* Global Styles */
@@ -43,6 +44,7 @@ body {
     background-color: var(--background-color);
     overflow: hidden;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* Screens */
@@ -323,6 +325,8 @@ body {
     width: 100%;
     height: calc(100% - 70px);
     overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 10px;
 }
 
 #basket-container {
@@ -348,6 +352,7 @@ body {
     height: 40px;
     object-fit: contain;
     z-index: 5;
+    box-sizing: border-box;
 }
 
 .golden-soybean {
@@ -798,6 +803,19 @@ body {
     .spin-buttons button {
         width: 100px;
         height: 100px;
+    }
+
+    .game-score-panel {
+        padding: 10px;
+    }
+
+    .score-container, .timer-container {
+        width: 110px;
+        height: 55px;
+    }
+
+    .game-area {
+        padding: 0 15px;
     }
 }
 

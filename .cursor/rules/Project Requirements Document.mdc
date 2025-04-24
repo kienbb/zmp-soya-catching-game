@@ -1,0 +1,41 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+*   **1. Introduction:** This document outlines the requirements for the "Soya Farming - Catching Game," an HTML5 game for VinaSoy promotion, playable on the web and Zalo Mini App, with a demo deployable on GitHub Pages.
+*   **2. Goals:**
+    *   Increase user engagement with the VinaSoy brand.
+    *   Promote the "3 Tốt" concept through gameplay rewards (different types of beans).
+    *   Encourage social sharing to expand reach.
+    *   Optionally collect user contact information (Name, Phone, Age) for marketing leads (Consent required).
+    *   Provide a fun, simple, and accessible gameplay experience.
+*   **3. Target Audience:** General mobile and web users, Zalo users, potential and existing VinaSoy consumers.
+*   **4. Key Features:**
+    *   **User Info Screen:** Collect Name, Phone, Age (Optional, skippable, or required based on campaign rules).
+    *   **Homepage:** Display user info (if collected), buttons for Play Game, Share, View Leaderboard, View Accumulated Rewards/History.
+    *   **Gameplay:**
+        *   Time-based (60 seconds).
+        *   Falling objects (Good Soybeans, Bad/Rotten Soybeans).
+        *   Player controls a basket horizontally at the bottom.
+        *   Catch good beans to score points (potentially different types/values like "Tình duyên tốt").
+        *   Avoid or lose "lives" (baskets) for catching bad beans (5 lives total).
+        *   Game ends when time runs out OR all lives are lost.
+    *   **Scoring:** Points awarded for each good bean caught.
+    *   **Reward Accumulation:** Track total good beans caught across multiple plays.
+    *   **Redemption/Rewards Screen:** Display accumulated beans, potentially offer options to redeem for vouchers or enter a lucky spin (details TBC).
+    *   **Leaderboard:** Display top scores (requires a backend or persistent storage solution beyond basic Local Storage for shared leaderboard).
+    *   **Sharing:** Button to share the game link (e.g., on Zalo, Facebook). Successful shares grant extra plays (e.g., +1 play per successful share, max 3/day).
+    *   **Daily Login:** Grant increasing number of free plays for consecutive (or non-consecutive, as per slide 7) daily logins.
+*   **5. Technical Requirements:**
+    *   HTML5, CSS3, JavaScript.
+    *   Responsive design for various screen sizes (mobile-first).
+    *   Compatible with modern web browsers (Chrome, Firefox, Safari, Edge) and Zalo Mini App environment.
+    *   Optimized asset loading and performance.
+    *   Backend (or Mock/LocalStorage for Demo): To handle user data (if collected), scores, leaderboard, share validation, daily login tracking. *Crucial Note for GitHub Pages:* A true shared leaderboard and validated sharing rewards require a separate backend service. A demo might use Local Storage (no shared leaderboard) or mock these features.
+*   **6. Success Metrics:**
+    *   Number of unique players.
+    *   Average playtime per session.
+    *   Number of shares.
+    *   Leaderboard participation.
+    *   Conversion rate (if tied to specific calls to action like voucher redemption).

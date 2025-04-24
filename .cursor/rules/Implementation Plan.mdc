@@ -1,0 +1,56 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+*   **Phase 1: Setup & Core Mechanics (Est. 3-4 days)**
+    *   Setup project structure (HTML, CSS, JS, optional frameworks/libs).
+    *   Setup Git repository.
+    *   Implement game canvas/area.
+    *   Implement basket movement (touch/keyboard).
+    *   Implement falling beans logic (good/bad, random spawn).
+    *   Implement collision detection (basket vs. beans).
+*   **Phase 2: Gameplay Loop & UI (Est. 3-4 days)**
+    *   Implement scoring logic.
+    *   Implement lives/basket system.
+    *   Implement timer.
+    *   Develop Gameplay UI (Score, Lives, Timer display).
+    *   Develop Game Over screen.
+    *   Implement basic Play Again / Return Home flow.
+*   **Phase 3: Menus & User Info (Est. 2-3 days)**
+    *   Develop Homepage UI (buttons).
+    *   Develop User Info form (if required).
+    *   Implement navigation between screens.
+    *   Basic Local Storage for high score saving (demo).
+*   **Phase 4: Rewards, Sharing & Daily Login (Est. 4-5 days)**
+    *   Implement bean accumulation logic (Local Storage for demo).
+    *   Develop Rewards screen UI.
+    *   Implement Sharing functionality (trigger platform share).
+    *   Implement logic for granting plays on share (mocked/Local Storage for demo).
+    *   Implement Daily Login check & play granting (mocked/Local Storage for demo).
+*   **Phase 5: Leaderboard & Backend Integration (Est. 5-7 days - *If building full backend*)**
+    *   Develop Leaderboard UI.
+    *   Setup backend project, database schema.
+    *   Implement API endpoints (User, Score, Play management).
+    *   Integrate FE with BE: Fetch/submit user data, scores, validate shares/logins, fetch leaderboard.
+    *   Implement simple authentication.
+    *   *Alternative for Demo:* Mock API calls in FE, display static/local leaderboard data.
+*   **Phase 6: Polishing & Testing (Est. 3-4 days)**
+    *   Add sound effects and music.
+    *   Refine animations and visuals.
+    *   Cross-browser and cross-device testing (including Zalo Mini App environment if possible).
+    *   Bug fixing and performance optimization.
+*   **Phase 7: Deployment (Est. 1 day)**
+    *   Build production version (minify, bundle assets).
+    *   Deploy FE to GitHub Pages.
+    *   Deploy BE (if applicable) to hosting service.
+    *   Final testing on deployed environments.
+
+*   **Tools:** Git, GitHub, VS Code (or preferred IDE), Browser DevTools, Trello/Notion (optional task tracking).
+*   **Milestones:**
+    *   Core gameplay playable.
+    *   UI shell complete.
+    *   Reward/Sharing logic functional (demo/full).
+    *   Leaderboard functional (demo/full).
+    *   Demo ready for deployment.
+
