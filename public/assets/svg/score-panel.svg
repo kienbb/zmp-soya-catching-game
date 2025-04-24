@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="196" height="76" rx="10" fill="#FBBF24" stroke="#92400E" stroke-width="4"/>
+  <rect x="10" y="10" width="180" height="60" rx="6" fill="#FEF3C7" stroke="#B45309" stroke-width="2"/>
+  <text x="100" y="35" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="16" fill="#92400E">SCORE</text>
+  <rect x="40" y="45" width="120" height="20" rx="4" fill="white" stroke="#B45309" stroke-width="1"/>
+</svg> 

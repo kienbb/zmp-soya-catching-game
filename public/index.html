@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trò Chơi Hứng Đậu Nành</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="home-screen" class="screen active">
+      <div class="screen-content">
+        <div class="logo-container">
+          <img src="assets/images/logo.png" alt="ZMP Soya Game Logo" class="logo">
+        </div>
+        <div class="game-instructions">
+          <h3>Cách Chơi:</h3>
+          <ul>
+            <li>Di chuyển giỏ để hứng đậu nành</li>
+            <li>Đậu thường: +10 điểm</li>
+            <li>Đậu vàng: +50 điểm</li>
+            <li><span class="warning">Cảnh báo:</span> Đậu xấu (màu đỏ) sẽ làm mất 1 mạng!</li>
+            <li>Bạn có 5 mạng. Mất hết mạng sẽ kết thúc trò chơi!</li>
+          </ul>
+        </div>
+        <div class="difficulty-selection">
+          <h3>Chọn Độ Khó:</h3>
+          <div class="difficulty-buttons">
+            <button class="difficulty-btn" data-level="0">Dễ</button>
+            <button class="difficulty-btn selected" data-level="1">Thường</button>
+            <button class="difficulty-btn" data-level="2">Khó</button>
+          </div>
+        </div>
+        <div class="buttons-container">
+          <button id="start-game" class="game-button">
+            <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+            <span class="button-text">Bắt Đầu</span>
+          </button>
+          <button id="leaderboard-btn" class="game-button">
+            <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+            <span class="button-text">Bảng Xếp Hạng</span>
+          </button>
+          <button id="lucky-spin-btn" class="game-button">
+            <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+            <span class="button-text">Quay May Mắn</span>
+          </button>
+          <button id="exchange-btn" class="game-button">
+            <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+            <span class="button-text">Đổi Thưởng</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Screen -->
+    <div id="form-screen" class="screen">
+      <div class="screen-content">
+        <div class="form-header">
+          <img src="assets/images/logo.png" alt="ZMP Soya Game Logo" class="form-logo">
+          <h1 class="form-title">Thông Tin Người Chơi</h1>
+          <p class="form-subtitle">Nhập thông tin của bạn để bắt đầu</p>
+        </div>
+        <form id="player-form" class="player-info-form">
+          <div class="form-field">
+            <input type="text" id="player-name" placeholder="Họ Tên" required>
+          </div>
+          <div class="form-field">
+            <input type="tel" id="player-phone" placeholder="Số Điện Thoại" required>
+          </div>
+          <div class="form-field">
+            <input type="number" id="player-age" placeholder="Tuổi" required min="1" max="120">
+          </div>
+          <button type="submit" class="game-button">
+            <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+            <span class="button-text">Chơi Ngay</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <div class="game-score-panel">
+        <div class="score-container">
+          <img src="assets/svg/score-panel.svg" alt="Score Background" class="score-bg">
+          <div id="score-text" class="score-text">0</div>
+        </div>
+        <div class="lives-container">
+          <div id="lives-display" class="lives-display"></div>
+        </div>
+        <div class="timer-container">
+          <img src="assets/svg/timer.svg" alt="Timer Background" class="timer-bg">
+          <div id="timer-text" class="timer-text">60</div>
+        </div>
+      </div>
+      <div id="game-area" class="game-area">
+        <div id="basket-container">
+          <img src="assets/svg/basket.svg" alt="Basket" id="basket">
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="screen">
+      <div class="game-over-panel">
+        <h2 class="game-over-title">Trò Chơi Kết Thúc</h2>
+        <div class="final-score-container">
+          <div class="final-score-label">Điểm Của Bạn:</div>
+          <div id="final-score" class="final-score">0</div>
+        </div>
+        <div class="game-over-buttons">
+          <button id="play-again" class="game-button">
+            <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+            <span class="button-text">Chơi Lại</span>
+          </button>
+          <button id="go-home" class="game-button">
+            <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+            <span class="button-text">Trang Chủ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaderboard Screen -->
+    <div id="leaderboard-screen" class="screen">
+      <button id="leaderboard-back" class="back-button">
+        <img src="assets/svg/back-arrow.svg" alt="Back">
+      </button>
+      <h2 class="leaderboard-title">Bảng Xếp Hạng</h2>
+      <div class="leaderboard-container">
+        <img src="assets/svg/leaderboard-panel.svg" alt="Leaderboard Background" class="leaderboard-bg">
+        <div id="leaderboard-entries" class="leaderboard-entries"></div>
+      </div>
+    </div>
+
+    <!-- Lucky Spin Screen -->
+    <div id="lucky-spin-screen" class="screen">
+      <button id="lucky-spin-back" class="back-button">
+        <img src="assets/svg/back-arrow.svg" alt="Back">
+      </button>
+      <h2 class="lucky-spin-title">Quay May Mắn</h2>
+      <div class="spin-wheel-container">
+        <div class="wheel-pointer">
+          <img src="assets/svg/arrow.svg" alt="Wheel Pointer" class="arrow">
+        </div>
+        <div id="wheel" class="wheel">
+          <!-- Segments will be added by JavaScript -->
+        </div>
+      </div>
+      <div class="bean-cost">
+        <img src="assets/svg/bean-coin.svg" alt="Bean">
+        <span>50 Đậu</span>
+      </div>
+      <div class="spin-buttons">
+        <button id="spin-btn" class="game-button">
+          <img src="assets/svg/button.svg" alt="Button Background" class="button-bg">
+          <span class="button-text">Quay</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Exchange Screen -->
+    <div id="exchange-screen" class="screen">
+      <button id="exchange-back" class="back-button">
+        <img src="assets/svg/back-arrow.svg" alt="Back">
+      </button>
+      <h2 class="exchange-title">Đổi Thưởng</h2>
+      <div class="beans-container">
+        <img src="assets/svg/bean-coin.svg" alt="Bean">
+        <span id="beans-count" class="beans-count">0</span>
+      </div>
+      <div class="rewards-container"></div>
+    </div>
+  </div>
+
+  <script src="./js/game.js"></script>
+</body>
+</html>
