@@ -1,54 +1,46 @@
 # Soya Catching Game
 
-Game hứng đậu nành vui nhộn với hệ thống streak và lời chúc may mắn. Game được phát triển với HTML, CSS và JavaScript thuần.
+A fun, interactive web-based game where players catch falling soybeans to earn points and collect rewards.
 
-![Soya Catching Game](public/assets/images/logo.png)
+## Features
 
-## Tính năng
+- Responsive design for both desktop and mobile devices
+- Touch, mouse, and keyboard controls for the basket
+- Different types of beans (regular, golden, negative)
+- Score tracking and leaderboard system
+- Bean currency that can be used to purchase rewards
+- Lucky spin wheel with random rewards
+- Local storage to save game progress
 
-- Ba loại đậu tốt với màu sắc khác nhau: Tình duyên (tím), Sức khỏe (xanh lá), Tài lộc (vàng)
-- Đậu vàng đặc biệt có thể giữ streak của đậu trước đó
-- Đậu xấu sẽ làm mất mạng
-- Hệ thống streak lên đến x10 với lời chúc tăng dần
-- Quay may mắn với nhiều phần thưởng
-- Bảng xếp hạng lưu trữ điểm cao
-- Đổi đậu thành phần thưởng
-- Ba cấp độ khó dễ khác nhau
+## How to Play
 
-## Cách chơi
+1. Enter your name and email to start the game
+2. Use your mouse, touch, or arrow keys to move the basket
+3. Catch the falling soybeans to earn points:
+   - Regular blue beans: 10 points
+   - Golden beans: 50 points
+   - Red negative beans: -10 points
+4. Try to get the highest score before the timer runs out
+5. Earn bean currency based on your score
+6. Use beans to purchase rewards or spin the lucky wheel
 
-1. Điền thông tin cá nhân (tên, số điện thoại, tuổi)
-2. Chọn độ khó
-3. Di chuyển giỏ để hứng đậu nành
-4. Bắt đậu cùng màu liên tiếp để nhận điểm thưởng streak
-5. Né đậu xấu (màu đỏ) để tránh mất mạng
-6. Hoàn thành trong thời gian giới hạn để nhận đậu
-7. Dùng đậu để đổi phần thưởng và quay may mắn
+## Development
 
-## Cài đặt và chạy
+This game is built with vanilla HTML, CSS, and JavaScript.
 
-1. Clone repository
-2. Mở file `public/index.html` trong trình duyệt
-3. Hoặc tạo một HTTP server đơn giản:
-   ```
-   python -m http.server 8000 --directory public
-   ```
-4. Truy cập http://localhost:8000
+### File Structure
 
-## Phát triển
+- `/public` - Main directory containing all game files
+  - `/assets/svg` - SVG graphics used in the game
+  - `/css` - Stylesheets
+  - `/js` - JavaScript files
+  - `index.html` - Main HTML file
 
-Game được phát triển bằng:
-- HTML5
-- CSS3
-- JavaScript thuần (không sử dụng framework)
+### Running Locally
 
-Cấu trúc thư mục:
-- `public/`: Thư mục chính của game
-  - `assets/`: Chứa hình ảnh và SVG
-  - `css/`: Chứa file CSS
-  - `js/`: Chứa file JavaScript
-  - `index.html`: File HTML chính
+Simply open the `public/index.html` file in a web browser to play the game.
 
-## Giấy phép
+## Credits
 
-© 2023 ZMP Soya Catching Game. All rights reserved. 
+- Graphics created with custom SVG illustrations
+- Game concept and implementation by [Your Name] 
