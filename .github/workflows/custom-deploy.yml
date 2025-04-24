@@ -24,12 +24,42 @@ jobs:
       
       - name: Deploy to GitHub Pages
         run: |
-          # Install gh-pages
-          npm install -g gh-pages
-          
           # Configure git
-          git config user.name "GitHub Actions Bot"
-          git config user.email "noreply@github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "noreply@github.com"
           
-          # Deploy the site (dotfiles flag without argument)
-          gh-pages -d . -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kienbb/zmp-soya-catching-game.git -t 
+          # Create a temporary package.json
+          echo '{"name":"deploy-script","private":true}' > package.json
+          
+          # Install gh-pages locally
+          npm install gh-pages --save-dev
+          
+          # Create a deploy script
+          cat > deploy.js << 'EOL'
+          const ghpages = require('gh-pages');
+          const path = require('path');
+          
+          // Get current directory
+          const basePath = process.cwd();
+          
+          ghpages.publish(basePath, {
+            branch: 'gh-pages',
+            repo: 'https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kienbb/zmp-soya-catching-game.git',
+            dotfiles: true,
+            message: 'Auto-deploy from GitHub Actions',
+            user: {
+              name: 'GitHub Actions Bot',
+              email: 'noreply@github.com'
+            }
+          }, function(err) {
+            if (err) {
+              console.error('Deployment error:', err);
+              process.exit(1);
+            } else {
+              console.log('Deployment successful!');
+            }
+          });
+          EOL
+          
+          # Run the deploy script
+          node deploy.js 
