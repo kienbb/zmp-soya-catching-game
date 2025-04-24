@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       
       - name: Deploy to GitHub Pages
         run: |
@@ -31,5 +31,5 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "noreply@github.com"
           
-          # Deploy the site
-          gh-pages -d . -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kienbb/zmp-soya-catching-game.git -t true 
+          # Deploy the site (dotfiles flag without argument)
+          gh-pages -d . -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kienbb/zmp-soya-catching-game.git -t 
